@@ -86,10 +86,9 @@ class CandidatosController extends Controller
         }
         Candidatos::insert($datosCandidatos);
 
-        
+        return redirect('candidatos');
 
         dd($datosCandidatos);
-        return response()->json($datosCandidatos);
     }
 
     /**

@@ -6,43 +6,49 @@
 
     <title>@yield('title') - SGC PROYECT</title>
 
+    <!-- Bootstrap CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css" />
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body>
 
-<nav class="flex py-5 bg-indigo-500 text-white">
-<div class="w-1/2 px-12 mr-auto">
-    <p class="text-2x1 font-bold"> SGC PROYECT </p> <!--PODRIA IR EL LOGO-->
-</div>
-
-    <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<div class="container-fluid ">
+    <a class="navbar-brand" href="">
+        <img src={{ asset("Images/sgc.png")}} width="120" height="90" alt="" srcset="" />
+        <span id="mainName">Sistema de Gestion de Candidatos</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
         @if(auth()->check())
-        <li>
-            <a href="{{route('candidatos.create') }}">crear candidato</a>
+        <li class="nav-item">
+            <a class="btn btn-primary" href="{{route('candidatos.create') }}">crear candidato</a>
         </li>
-        <li>
-            <a href="{{route('candidatos.index') }}">ver candidatos</a>
+        <li class="nav-item">
+            <a class="btn btn-primary" href="{{route('candidatos.index') }}">ver candidatos</a>
         </li>
-        <li class="mx-6">
-            <p class="text-xl">Hola <b>{{auth()->user()->name }}</b></p>
+        <li class="nav-item">
+            <p>Hola <b>{{auth()->user()->name }}</b></p>
         </li>
-        <li>
-        <a href="{{route('login.destroy') }}">Log Out</a>
+        <li class="nav-item">
+        <a class="btn btn-primary" href="{{route('login.destroy') }}">Log Out</a>
         </li>
         
         @else
-            <li class="mx-6">
-                <a href="{{ route('login.index') }}" class="font-semibold
-        hover:bg-indigo-700 py-3 px-4 rounded-md">Log In</a>
+            <li class="nav-item">
+                <a class="btn btn-primary" href="{{ route('login.index') }}">Log In</a>
             </li>
-            <li>
-                <a href="{{ route('register.index') }}" class=" font-semibold
-        border-2 border-white py-2 px-4 rounded-md hover:bg-white
-        hover:text-indigo-700">Register</a>
+            <li class="nav-item">
+                <a class="btn btn-primary" href="{{ route('register.index') }}">Register</a>
             </li>
         @endif
     </ul>
+</div>
+</div>
 </nav>
 
 
@@ -50,6 +56,7 @@
 
 
 <!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
 
 </body>
