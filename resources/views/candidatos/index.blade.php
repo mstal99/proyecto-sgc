@@ -26,7 +26,7 @@
             <td>{{ $candidato->Apellido }}</td>
             <td>{{ $candidato->Telefono }}</td>
             <td>{{ $candidato->Correo }}</td>
-            <td>{{ $candidato->CV }}</td>
+            <td><a href="{{ $candidato->CV }}" target="_blank">VER</a></td>
             <td>
                 <a href="{{ url('/candidatos/'.$candidato->id.'/edit')}}" class="btn btn-warning"> 
                     Editar  
@@ -35,7 +35,7 @@
                 <form action="{{ url('/candidatos/'.$candidato->id) }}" method="post">
                     @csrf
                     {{ method_field('DELETE') }}
-                    <input class="btn btn-danger" type="submit" onclick="return confirm('¿Quieres borrar?')" value="Borrar">
+                    <input class="btn btn-danger" type="submit" onclick="return confirm('¿Seguro que desea borrar este candidato?')" value="Borrar">
                 </form>
             </td>
         </tr>

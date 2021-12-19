@@ -17,7 +17,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 <div class="container-fluid ">
-    <a class="navbar-brand" href="">
+    <a class="navbar-brand" href="{{ '/' }}">
         <img src={{ asset("Images/sgc.png")}} width="120" height="90" alt="" srcset="" />
         <span id="mainName">Sistema de Gestion de Candidatos</span>
     </a>

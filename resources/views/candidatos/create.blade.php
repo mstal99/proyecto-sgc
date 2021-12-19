@@ -3,19 +3,10 @@
 @section('content')
 
 <!--formulario de creacion de candidato-->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-
+    <br>
+    <div class="container col-10 col-sm-8 col-md-6 col-xl-4">
     <form action="{{ url('/candidatos') }}" method="post" enctype="multipart/form-data">
-        <div class="container">
+        
         <div class="form-group">
         @csrf
 
@@ -46,11 +37,8 @@
         <input class="form-control" type="submit" value="Guardar datos">
         <br>
     </div>
-    </div>
+    
     </form>
-
-
-</body>
-</html>
+</div>
 
 @endsection

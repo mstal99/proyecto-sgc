@@ -3,10 +3,11 @@
 @section('content')
 
 <!--formulario de edicion de candidato-->
-
+<br>
+<div class="container col-10 col-sm-8 col-md-6 col-xl-4">
 <form action="{{ url('/candidatos/'.$candidatos->id) }}" method="post" enctype="multipart/form-data">
 
-    <div class="container">
+   
     <div class="form-group">
     @csrf
     {{ method_field('PATCH') }}
@@ -36,9 +37,10 @@
 
         <input class="form-control" type="submit" value="Guardar datos">
         <br>
+        <a href='{{ route('candidatos.index') }}' class="btn btn-primary">Volver</a>
     </div>
 </form>
 </div>
-<a href='{{ route('candidatos.index') }}'>Volver</a>
+
 
 @endsection
