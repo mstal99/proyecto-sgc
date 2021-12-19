@@ -3,24 +3,24 @@
 @section('content')
     
 
-<table class="table table-light">
+<table class="table table-bordered table-hover">
     <thead class="thead-light">
         <tr>
-            <th>#</th>
-            <th>Foto</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Telefono</th>
-            <th>Correo</th>
-            <th>CV</th>
-            <th>Acciones</th>
+            <th scope="col">#</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Correo</th>
+            <th scope="col">CV</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
 
     <tbody>
         @foreach ( $candidatos as $candidato )
         <tr>
-            <td>{{ $candidato->id }}</td>
+            <th scope="row">{{ $candidato->id }}</th>
             <td><img src="{{ asset('/'.$candidato->Foto) }}" alt="" width="150px"></td>
             <td>{{ $candidato->Nombre }}</td>
             <td>{{ $candidato->Apellido }}</td>
@@ -44,4 +44,5 @@
 
     </tbody>
 </table>
+
 @endsection
