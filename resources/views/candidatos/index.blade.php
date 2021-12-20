@@ -2,8 +2,8 @@
 
 @section('content')
     
-
-<table class="table table-bordered table-hover">
+<div class="container-fluid table-responsive">
+<table class="table table-bordered table-hover ">
     <thead class="thead-light">
         <tr>
             <th scope="col">#</th>
@@ -28,15 +28,17 @@
             <td>{{ $candidato->Correo }}</td>
             <td><a href="{{ $candidato->CV }}" target="_blank">VER</a></td>
             <td>
-                <a href="{{ url('/candidatos/'.$candidato->id.'/edit')}}" class="btn btn-warning"> 
+                <div class="container d-flex flex-column">
+                <a href="{{ url('/candidatos/'.$candidato->id.'/edit')}}" class="btn btn-warning p-2" style="width: 80px"> 
                     Editar  
                 </a>
                 <!--ELIMINAR UN CANDIDATO-->
                 <form action="{{ url('/candidatos/'.$candidato->id) }}" method="post">
                     @csrf
                     {{ method_field('DELETE') }}
-                    <input class="btn btn-danger" type="submit" onclick="return confirm('¿Seguro que desea borrar este candidato?')" value="Borrar">
+                    <input class="btn btn-danger p-2" style="width: 80px" type="submit" onclick="return confirm('¿Seguro que desea borrar este candidato?')" value="Borrar">
                 </form>
+            </div>
             </td>
         </tr>
 
@@ -44,5 +46,6 @@
 
     </tbody>
 </table>
+</div>
 
 @endsection

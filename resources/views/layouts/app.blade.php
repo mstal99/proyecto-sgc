@@ -19,7 +19,7 @@
 <div class="container-fluid ">
     <a class="navbar-brand" href="{{ '/' }}">
         <img src={{ asset("Images/sgc.png")}} width="120" height="90" alt="" srcset="" />
-        <span id="mainName">Sistema de Gestion de Candidatos</span>
+        <span id="mainName" class="d-none d-sm-inline">Sistema de Gestion de Candidatos</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,25 +27,22 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
     <ul class="navbar-nav">
         @if(auth()->check())
-        <li class="nav-item">
-            <a class="btn btn-primary" href="{{route('candidatos.create') }}">crear candidato</a>
+        <li class="nav-item"> 
+            <a class="btn btn-primary navButton" href="{{route('candidatos.create') }}" style="margin: 3px">crear candidato</a>
         </li>
         <li class="nav-item">
-            <a class="btn btn-primary" href="{{route('candidatos.index') }}">ver candidatos</a>
+            <a class="btn btn-primary navButton" href="{{route('candidatos.index') }}" style="margin: 3px">ver candidatos</a>
         </li>
         <li class="nav-item">
-            <p>Hola <b>{{auth()->user()->name }}</b></p>
-        </li>
-        <li class="nav-item">
-        <a class="btn btn-primary" href="{{route('login.destroy') }}">Log Out</a>
+        <a class="btn btn-danger navButton" href="{{route('login.destroy') }}" style="margin: 3px">Log Out</a>
         </li>
         
         @else
             <li class="nav-item">
-                <a class="btn btn-outline-primary" href="{{ route('login.index') }}">Log In</a>
+                <a class="btn btn-outline-primary navButton" href="{{ route('login.index') }}" style="margin: 3px">Log In</a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-primary" href="{{ route('register.index') }}">Register</a>
+                <a class="btn btn-primary navButton" href="{{ route('register.index') }}" style="margin: 3px">Register</a>
             </li>
         @endif
     </ul>
