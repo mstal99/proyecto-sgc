@@ -13,26 +13,26 @@
     {{ method_field('PATCH') }}
 
         <label for="Nombre"> Nombre </label>
-        <input class="form-control" type="text" name="Nombre" value="{{$candidatos->Nombre}}" id="Nombre">
+        <input class="form-control" type="text" name="Nombre" value="{{$candidatos->Nombre}}" id="Nombre" required>
         <br>
         <label for="Apellido"> Apellido </label>
-        <input class="form-control" type="text" name="Apellido" value="{{$candidatos->Apellido}}" id="Apellido">
+        <input class="form-control" type="text" name="Apellido" value="{{$candidatos->Apellido}}" id="Apellido" required>
         <br>
 
         <label for="Telefono"> Telefono </label>
-        <input class="form-control" type="tel" name="Telefono" value="{{$candidatos->Telefono}}" id="Telefono">
+        <input class="form-control" type="tel" name="Telefono" value="{{$candidatos->Telefono}}" id="Telefono" required>
         <br>
 
         <label for="Correo"> Correo </label>
-        <input class="form-control" type="email" name="Correo" value="{{$candidatos->Correo}}" id="Correo">
+        <input class="form-control" type="email" name="Correo" value="{{$candidatos->Correo}}" id="Correo" required>
         <br>
 
         <label for="Foto"> Foto </label>
-        <input class="form-control" type="file" name="Foto" value="{{$candidatos->Foto}}" id="Foto">
+        <input class="form-control" type="file" name="Foto" value="{{$candidatos->Foto}}" id="Foto" required>
         <br>
 
         <label for="CV"> CV </label>
-         <input class="form-control" type="file" name="CV" value="{{$candidatos->CV}}" id="CV">
+         <input class="form-control" type="file" name="CV" value="{{$candidatos->CV}}" id="CV" required>
         <br>
 
         <input class="form-control" type="submit" value="Guardar datos">

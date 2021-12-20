@@ -28,21 +28,21 @@
     <ul class="navbar-nav">
         @if(auth()->check())
         <li class="nav-item"> 
-            <a class="btn btn-primary navButton" href="{{route('candidatos.create') }}" style="margin: 3px">crear candidato</a>
+            <a class="btn btn-primary navButton" href="{{route('candidatos.create') }}" style="margin: 3px">Crear candidato</a>
         </li>
         <li class="nav-item">
-            <a class="btn btn-primary navButton" href="{{route('candidatos.index') }}" style="margin: 3px">ver candidatos</a>
+            <a class="btn btn-primary navButton" href="{{route('candidatos.index') }}" style="margin: 3px">Ver candidatos</a>
         </li>
         <li class="nav-item">
-        <a class="btn btn-danger navButton" href="{{route('login.destroy') }}" style="margin: 3px">Log Out</a>
+        <a class="btn btn-danger navButton" href="{{route('login.destroy') }}" style="margin: 3px">Cerrar sesión</a>
         </li>
         
         @else
             <li class="nav-item">
-                <a class="btn btn-outline-primary navButton" href="{{ route('login.index') }}" style="margin: 3px">Log In</a>
+                <a class="btn btn-outline-primary navButton" href="{{ route('login.index') }}" style="margin: 3px">Iniciar sesión</a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-primary navButton" href="{{ route('register.index') }}" style="margin: 3px">Register</a>
+                <a class="btn btn-primary navButton" href="{{ route('register.index') }}" style="margin: 3px">Registrarse</a>
             </li>
         @endif
     </ul>
